@@ -6,7 +6,18 @@ package com.main.datastructures;
 
 /**
  * @author Amruta Kajrekar
- *
+ * Output is:
+   _______________________
+    Elements are:
+	1 -> 2 -> 3 -> 4 -> 5 -> NULL
+	Elements in reverse order are:
+	5 -> 4 -> 3 -> 2 -> 1 -> NULL
+	Node = 1skipped
+	Found = 3
+	Elements are:
+	1 -> 2 -> 4 -> 5 -> NULL
+	Elements in reverse order are:
+	5 -> 4 -> 2 -> 1 -> NULL
  */
 public class DoublyLinkedList {
 

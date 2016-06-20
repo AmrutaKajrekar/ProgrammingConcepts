@@ -7,6 +7,15 @@ package com.main.datastructures;
 /**
  * @author Amruta Kajrekar
  *
+ *  Output is:
+    _______________________
+	Elements are:
+	0 -> 1 -> 2 -> 3 -> 4 -> NULL
+	Node = 0skipped
+	Node = 1skipped
+	Found = 3
+	Elements are:
+	0 -> 1 -> 2 -> 4 -> NULL
  */
 public class SinglyLinkedList {
 
@@ -42,7 +51,7 @@ public class SinglyLinkedList {
 				System.out.print(temp.data + " -> ");
 				temp = temp.next;
 			}
-			System.out.println("");
+			System.out.println("NULL");
 		}
 
 				 
