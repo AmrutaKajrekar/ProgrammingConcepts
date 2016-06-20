@@ -39,9 +39,10 @@ public class SinglyLinkedList {
 			System.out.println("Elements are:");
 			Node temp = head;
 			while (temp!= null){
-				System.out.println(temp.data);
+				System.out.print(temp.data + " -> ");
 				temp = temp.next;
 			}
+			System.out.println("");
 		}
 
 				 
@@ -59,7 +60,7 @@ public class SinglyLinkedList {
 		
 		public static void delete(int i) {
 			Node temp = head;
-
+			
 			for (int j=1; j< i-1 ;j++){
 				System.out.println("Node = " + temp.data + "skipped");
 				temp =temp.next;
