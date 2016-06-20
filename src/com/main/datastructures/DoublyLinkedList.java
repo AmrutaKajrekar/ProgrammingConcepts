@@ -45,7 +45,7 @@ public class DoublyLinkedList {
 				System.out.print(temp.data + " -> ");
 				temp = temp.next;
 			}
-			System.out.println("");
+			System.out.println("NULL");
 		}
 
 		public static void printReverseList() {
@@ -55,7 +55,7 @@ public class DoublyLinkedList {
 				System.out.print(temp.data + " -> ");
 				temp = temp.prev;
 			}
-			System.out.print(temp.data + " -> ");
+			System.out.print(temp.data + " -> NULL");
 		}
 
 				 
