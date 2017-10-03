@@ -39,25 +39,10 @@ public class PathSum {
 		
 	}
 
-	public static class TreeNode{
-		TreeNode left;
-		TreeNode right;
-		int value;
-		
-		TreeNode(int x){
-			value = x;
-		}
-		TreeNode(int x, TreeNode pleft, TreeNode pright){
-			value = x;
-			left = pleft;
-			right = pright;
-		}
-	}
-	
 	public static class Solution{
 		
 		public boolean hasPath(TreeNode root, int sumRequired){
-			LinkedList<TreeNode> nodes = new LinkedList<PathSum.TreeNode>();
+			LinkedList<TreeNode> nodes = new LinkedList<TreeNode>();
 			LinkedList<Integer> values = new LinkedList<Integer>();
 			LinkedList<String> path = new LinkedList<String>();
 			

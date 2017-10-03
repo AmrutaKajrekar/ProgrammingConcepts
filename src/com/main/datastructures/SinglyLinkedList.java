@@ -26,7 +26,7 @@ public class SinglyLinkedList {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 1; i < 6; i++) {
 			Node.insert(i);
 		}
 		Node.printList();
@@ -74,9 +74,33 @@ public class SinglyLinkedList {
 				System.out.println("Node = " + temp.data + "skipped");
 				temp =temp.next;
 			}
+			
 			System.out.println("Found = " + temp.next.data);
 			temp.next = temp.next.next;
 		}
 
 	}
+
+	public static Node getHead() {
+		return head;
+	}
+
+	public static Node getTail() {
+		return tail;
+	}
+	
+	public Node swapTwoNodes(){
+		 Node temp = head;
+		 while (temp != null && temp.next != null) {
+			 
+	            /* Swap the data */
+	            int k = temp.data;
+	            temp.data = temp.next.data;
+	            temp.next.data = k;
+	            temp = temp.next.next;
+	         }
+		 return head;
+		 
+	}
+
 }
