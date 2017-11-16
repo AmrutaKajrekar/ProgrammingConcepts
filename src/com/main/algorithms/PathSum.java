@@ -20,26 +20,24 @@ public class PathSum {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+
 		TreeNode node7 = new TreeNode(7);
 		TreeNode node2 = new TreeNode(2);
 		TreeNode node1 = new TreeNode(1);
-		
+
 		TreeNode node11 = new TreeNode(11, node7, node2);
 		TreeNode node13 = new TreeNode(13);
 		TreeNode node42 = new TreeNode(4, null, node1);
-		
+
 		TreeNode node41 = new TreeNode(4, node11, null);
 		TreeNode node8 = new TreeNode(8, node13, node42);
-		
+
 		TreeNode root5 = new TreeNode(5, node41, node8);
 		
-		Solution sol = new Solution();
-		sol.hasPath(root5, 22);
-		
-	}
+		PathSum sol = new PathSum();
+		System.out.println(sol.hasPath(root5, 22));
 
-	public static class Solution{
+	}
 		
 		public boolean hasPath(TreeNode root, int sumRequired){
 			LinkedList<TreeNode> nodes = new LinkedList<TreeNode>();
@@ -65,6 +63,7 @@ public class PathSum {
 					
 					if(curr.left == null && curr.right == null && sumVal == sumRequired){
 						System.out.println("node found = " + curr.value + ", with sum = "+ sumVal +", and path: "+ p);
+						printPaths(path);
 						return true;
 					}
 					if(curr.left != null){
@@ -98,6 +97,12 @@ public class PathSum {
 				TreeNode treeNode = (TreeNode) iterator.next();
 				System.err.println(">>" + treeNode.value);
 			}
+		}
+
+	private void printPaths(LinkedList<String> nodes) {
+		for (Iterator iterator = nodes.iterator(); iterator.hasNext();) {
+			String treeNode = (String) iterator.next();
+			System.err.println(">>" + treeNode);
 		}
 	}
 }
