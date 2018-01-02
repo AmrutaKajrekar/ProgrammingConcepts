@@ -29,7 +29,7 @@ public class FindLeavesOfBT {
 		root.right = rRight3;
 		
 		FindLeavesOfBT find = new FindLeavesOfBT();
-		find.findLeaves(root);
+		System.out.print(find.findLeaves(root));
 	}
 
 	
