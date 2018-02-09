@@ -29,30 +29,29 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 public class LeftLeavesSum {
 
     public static void main(String[] args){
-        TreeNode node7 = new TreeNode(7);
-        TreeNode node2 = new TreeNode(2);
-        TreeNode node1 = new TreeNode(1);
-
-        TreeNode node11 = new TreeNode(11);
-        node11.left=node7;
-        node11.right=node2;
-        TreeNode node13 = new TreeNode(13);
-        TreeNode node42 = new TreeNode(4);
-        node42.right=node1;
-
-        TreeNode node41 = new TreeNode(4);
-        node41.left=node11;
-        TreeNode node8 = new TreeNode(8);
-        node8.left=node13;
-        node8.right=node42;
-
-        TreeNode root5 = new TreeNode(5);
-        root5.left=node41;
-        root5.right=node8;
+//        TreeNode node7 = new TreeNode(7);
+//        TreeNode node2 = new TreeNode(2);
+//        TreeNode node1 = new TreeNode(1);
+//
+//        TreeNode node11 = new TreeNode(11);
+//        node11.left=node7;
+//        node11.right=node2;
+//        TreeNode node13 = new TreeNode(13);
+//        TreeNode node42 = new TreeNode(4);
+//        node42.right=node1;
+//
+//        TreeNode node41 = new TreeNode(4);
+//        node41.left=node11;
+//        TreeNode node8 = new TreeNode(8);
+//        node8.left=node13;
+//        node8.right=node42;
+//
+//        TreeNode root5 = new TreeNode(5);
+//        root5.left=node41;
+//        root5.right=node8;
 
         LeftLeavesSum sum = new LeftLeavesSum();
-        sum.sumOfLeftLeaves(root5);
-//        sum.printTree(root5);
+        sum.sumOfLeftLeaves(TreeNode.getSampleTree());
     }
 
     public int sumOfLeftLeaves(TreeNode root) {
