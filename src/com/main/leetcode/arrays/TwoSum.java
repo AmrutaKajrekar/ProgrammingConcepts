@@ -1,7 +1,6 @@
-/**
- * 
- */
 package com.main.leetcode.arrays;
+
+import java.util.HashMap;
 
 /**
  * @author amruta.kajrekar
@@ -9,27 +8,28 @@ package com.main.leetcode.arrays;
  */
 public class TwoSum {
 
-	
-	public static void main(String[] args) {
-		int[] nums = {3,2,4};
-		int target = 6;
-		int[] res = twoSum(nums, target);
-		System.out.println("numbers are: "+ res[0] + ", " + res[1]);
-	}
-	
-    public static int[] twoSum(int[] nums, int target) {
-    	int[] res = new int[2];
-        if(nums!=null && nums.length >=2){
-        for (int i=0; i<nums.length-1; i++){
-        	for (int j=i+1; j<nums.length; j++){
-            	if(nums[i]+nums[j] == target){
-            		res[0]=i;
-            		res[1]=j;
-            		break;
-            	}
+    public int[] twoSum(int[] n, int target){
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        int[] result = new int[2];
+
+        for(int i=0;i<n.length;i++){
+            if(map.containsKey(n[i])){
+                int index = map.get(n[i]);
+                result[0]=index;
+                result[1]=i;
+            }else{
+                map.put(target - n[i],i);
             }
         }
+        return result;
+    }
+
+    public static void main(String[] args){
+        TwoSum p= new TwoSum();
+        int[] n = new int[]{2,7,11,15};
+        int[] res= p.twoSum(n,9);
+        for (int i=0; i<res.length;i++) {
+            System.out.println(res[i]);
         }
-		return res;
     }
 }

@@ -86,7 +86,7 @@ public class PathSum {
     private void printNodes(LinkedList<TreeNode> nodes) {
         Iterator<TreeNode> it = nodes.iterator();
         while(it.hasNext()){
-            System.out.print(((TreeNode)it.next()).val);
+            System.out.print(it.next().val);
         }
     }
 }
