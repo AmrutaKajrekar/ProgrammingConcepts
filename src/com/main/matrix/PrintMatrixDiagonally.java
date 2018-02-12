@@ -1,7 +1,7 @@
 package com.main.matrix;
 
 /**
- * Created by 212431401 on 1/26/18.
+ * @author amruta.kajrekar
  */
 public class PrintMatrixDiagonally {
         /**
