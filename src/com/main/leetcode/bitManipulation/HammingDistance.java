@@ -1,4 +1,4 @@
-package com.main.leetcode.BitManipulation;
+package com.main.leetcode.bitManipulation;
 
 /**
  * @author amruta.kajrekar
