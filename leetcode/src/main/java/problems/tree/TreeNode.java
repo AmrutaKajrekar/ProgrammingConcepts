@@ -55,4 +55,43 @@ public  class TreeNode {
         }
 
     }
+
+//[1,2,2,3,3,null,null,4,4]
+    //not working
+    //call made as TreeNode.getCustomTree(new String[] {"1","2","2","3",null,null,"3","4",null,null,"4"})
+    public static TreeNode getCustomTree(String[] tree){
+        TreeNode root = new TreeNode(Integer.parseInt(tree[0]));
+        TreeNode nodel =null;
+        TreeNode noder = null;
+
+        if(tree[1]!=null);
+        nodel = new TreeNode(Integer.parseInt(tree[1]));
+        if(tree[2]!=null);
+        noder = new TreeNode(Integer.parseInt(tree[2]));
+
+        root.left= nodel;
+        root.right=noder;
+
+        for (int i=1;i<tree.length-3;i=i+3){
+            TreeNode node1 = null;
+            if(tree[i]!=null)
+            node1 = new TreeNode(Integer.parseInt(tree[i]));
+
+            nodel =null;
+            noder = null;
+
+            if(tree[i+1]!=null)
+             nodel = new TreeNode(Integer.parseInt(tree[i+1]));
+            if(tree[i+2]!=null)
+             noder = new TreeNode(Integer.parseInt(tree[i+2]));
+
+             if(node1!=null) {
+                 node1.left = nodel;
+                 node1.right = noder;
+             }
+
+        }
+
+        return root;
+    }
  }
