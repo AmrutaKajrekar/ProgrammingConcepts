@@ -21,6 +21,12 @@ import java.util.Scanner;
 public class test1 {
 
     public static void main(String[] args){
+        int x=-121;
+        StringBuilder s = new StringBuilder(String.valueOf(x));
+        System.out.println(s.toString());
+        System.out.println(s.reverse());
+        System.out.println(String.valueOf(x).equalsIgnoreCase(s.reverse().toString()));
+
         test1 test = new test1();
 //        System.out.print(electionWinner(new String[]{"Alex","Michael","Harry", "Michael","Alex","Michael"}));
 //        System.out.print(getMovieTitles("spiderman"));
