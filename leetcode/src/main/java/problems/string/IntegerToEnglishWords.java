@@ -15,7 +15,7 @@ public class IntegerToEnglishWords {
 
     public static void main(String[] args){
         IntegerToEnglishWords english = new IntegerToEnglishWords();
-        System.out.print(english.numberToWords(1000));
+        System.out.print(english.numberToWords(035043));
     }
 
     public String numberToWords(int num) {
@@ -51,16 +51,18 @@ public class IntegerToEnglishWords {
                 englishWords.append(getNumVal(str.charAt(i))).append(" Hundred");
             }
 
-            else if (i==str.length()-5) {
+            else if (i==str.length()-5 ) {
                 englishWords.append(getTenVal(str.charAt(i), str.charAt(i+1)));
             }
 
             else if (i==str.length()-4) {
                 if(str.length()>5)
-                    englishWords.append(getTenVal(str.charAt(i-1),str.charAt(i))).append(" Thousand");
+                    englishWords.append(getTenVal(str.charAt(i),str.charAt(i+1))).append(" Thousand");
                 else {
-                    if(str.length()==4 || str.length()>5)
-                    englishWords.append(getNumVal(str.charAt(i))).append(" Thousand");
+                    if(str.length()>=4) {
+//                        englishWords.append(getTenVal(str.charAt(i - 1), str.charAt(i)));
+                        englishWords.append(getNumVal(str.charAt(i))).append(" Thousand");
+                    }
                     else{
                         englishWords.append(" Thousand");
                     }
@@ -92,7 +94,7 @@ public class IntegerToEnglishWords {
         case '2': return " Twenty";
         case '3': return " Thirty";
         case '4': return " Forty";
-        case '5': return " Fivty";
+        case '5': return " Fifty";
         case '6': return " Sixty";
         case '7': return " Seventy";
         case '8': return " Eighty";
@@ -107,7 +109,7 @@ public class IntegerToEnglishWords {
         case '1': return " Eleven";
         case '2': return " Twelve";
         case '3': return " Thirteen";
-        case '4': return " Forteen";
+        case '4': return " Fourteen";
         case '5': return " Fifteen";
         case '6': return " Sixteen";
         case '7': return " Seventeen";
