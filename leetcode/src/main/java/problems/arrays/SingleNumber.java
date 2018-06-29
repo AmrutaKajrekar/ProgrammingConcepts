@@ -10,7 +10,7 @@ public class SingleNumber {
 
     public static void main(String[] args){
         SingleNumber num = new SingleNumber();
-        System.out.println(num.singleNumber2(new int[] {4,1,2,1,2}));
+        System.out.println(num.singleNumber2(new int[] {1,2,1,2,1,2}));
     }
 
     public int singleNumber2(int[] nums)
