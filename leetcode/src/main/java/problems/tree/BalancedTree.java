@@ -37,10 +37,16 @@ public class BalancedTree {
 
     public static void main(String[] args){
         BalancedTree tree = new BalancedTree();
-        System.out.println(tree.isBalanced(TreeNode.getSampleTree()));
+//        System.out.println(tree.isBalanced(TreeNode.getSampleTree()));
+        TreeNode node15 = new TreeNode(15);
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node20 = new TreeNode(20, null, node7);
+        TreeNode node9 = new TreeNode(9, node15, null);
+        TreeNode root = new TreeNode(3, node9, node20);
+        System.out.println(tree.isBalanced(root));
     }
 
-    boolean isBalanced = false;
+    boolean isBalanced = true;
     public boolean isBalanced(TreeNode root) {
         if(root==null) return true;
         isBal(root);

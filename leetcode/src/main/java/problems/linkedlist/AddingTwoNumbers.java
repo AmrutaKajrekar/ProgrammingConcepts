@@ -1,6 +1,7 @@
 package problems.linkedlist;
 
 import java.math.BigInteger;
+import java.util.Stack;
 
 /**
  * @author amruta.kajrekar
@@ -40,9 +41,11 @@ public class AddingTwoNumbers {
 //        node8.next = node9;
 //        node9.next = node10;
 
+        ListNode node10 = new ListNode(7);
         ListNode node11 = new ListNode(2);
         ListNode node12 = new ListNode(4);
         ListNode node13 = new ListNode(3);
+        node10.next=node11;
         node11.next=node12;
         node12.next=node13;
         ListNode node14 = new ListNode(5);
@@ -57,8 +60,17 @@ public class AddingTwoNumbers {
 
         //3,9,9,9,9,9,9,9,9,9
         //7
+        // 243
+        // 564
+        //=708
         AddingTwoNumbers add= new AddingTwoNumbers();
-        ListNode result = add.addTwoNumbers(node11, node14);
+//        ListNode result = add.addTwoNumbers(node11, node14);
+
+        // 2-4-3
+        // 5-6-4
+        // 8-0-7
+//        ListNode result = add.addTwoNumberReverse(node10, node14);
+        ListNode result = add.addTwoNumberReverse(new ListNode(9), new ListNode(9));
         printNode(result);
     }
 
@@ -70,7 +82,72 @@ public class AddingTwoNumbers {
         }
     }
 
+    int carry=0;
+    public ListNode addTwoNumberReverse(ListNode l1, ListNode l2){
+        ListNode finalSum = new ListNode(0);
+        ListNode head = finalSum;
+
+        finalSum.next = addTwoNumbers(l1,l2);
+        return head.next;
+    }
+//
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        Stack<Integer> s1 = new Stack<Integer>();
+        Stack<Integer> s2 = new Stack<Integer>();
+        Stack<Integer> s3 = new Stack<Integer>();
+
+        int sum = 0;
+        int carry = 0;
+        while(l1!=null){
+            s1.push(l1.val);
+            l1 = l1.next;
+        }
+        while(l2!=null){
+            s2.push(l2.val);
+            l2 = l2.next;
+        }
+
+        ListNode list = new ListNode(0);
+        ListNode head = list;
+        while(!s1.isEmpty() || !s2.isEmpty()){
+            int i = carry;
+            if(!s1.isEmpty()) i +=s1.pop();
+            if(!s2.isEmpty()) i +=s2.pop();
+
+            sum = i%10;
+            carry = i/10;
+            s3.push(sum);
+        }
+        if(carry>0) {
+//            sum = s3.pop() + carry;
+//            s3.push(sum / 10);
+//            s3.push(sum % 10);
+            s3.push(carry);
+        }
+        while(!s3.isEmpty()){
+            list.next = new ListNode(s3.pop());
+            list = list.next;
+        }
+        return head.next;
+    }
+
+    public ListNode addTwoNumbersMSB(ListNode l1, ListNode l2) {
+        ListNode finalSum = new ListNode(0);
+        ListNode head = finalSum;
+        int carry=0;
+        while(l1 !=null && l2 !=null){
+            int sum = l1.val+l2.val;
+            finalSum.next = new ListNode((sum%10) + carry );
+            carry = sum/10;
+            l1 = l1.next;
+            l2 = l2.next;
+            finalSum = finalSum.next;
+        }
+        if(carry>0) finalSum.next = new ListNode(carry);
+        return head.next;
+    }
+
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         StringBuilder str1=new StringBuilder();
         StringBuilder str2=new StringBuilder();
 

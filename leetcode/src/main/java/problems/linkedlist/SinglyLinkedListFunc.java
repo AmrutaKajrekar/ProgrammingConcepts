@@ -6,9 +6,9 @@ package problems.linkedlist;
 public class SinglyLinkedListFunc {
 
     public static void main(String[] args){
-        ListNode node7 = new ListNode(1);
-        ListNode node6 = new ListNode(2, node7);
-        ListNode node5 = new ListNode(4, node6);
+        ListNode node7 = new ListNode(7);
+        ListNode node6 = new ListNode(6, node7);
+        ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
         ListNode node3 = new ListNode(3, node4);
         ListNode node2 = new ListNode(2, node3);
@@ -17,7 +17,10 @@ public class SinglyLinkedListFunc {
         SinglyLinkedListFunc fun = new SinglyLinkedListFunc();
 //        fun.printLinkList(fun.reverseList(node1));
 //        fun.printLinkList(fun.recursivereverse(node1));
-        System.out.println(fun.isPalindrome(node1));
+//        System.out.println(fun.isPalindrome(node1));
+
+        fun.printLinkList(fun.reverseBetween(node1, 3, 5));
+
     }
 
 
@@ -70,4 +73,52 @@ public class SinglyLinkedListFunc {
         }
         return true;
     }
+
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+        ListNode curr = head;
+        int i=1;
+
+        ListNode mptr = new ListNode(0);
+        ListNode returnptr = new ListNode(0);
+        ListNode nptr = mptr;
+        while(curr!=null){
+            if(i<m) {
+                mptr.next = new ListNode(curr.val);
+                mptr = mptr.next;
+            }
+            if(i>=m && i<=n){
+                nptr.next = new ListNode(curr.val);
+                nptr = nptr.next;
+            }
+            curr = curr.next;
+            i++;
+        }
+        curr = head;
+
+        for(int j=1;j<m;j++){
+            curr = curr.next;
+        }
+        ListNode end = curr;
+        for(int k=m;k<n;k++){
+            end = end.next;
+        }
+        ListNode join = end.next;
+        end.next = null;
+        mptr.next = recursivereverse(curr);
+
+        curr = mptr;
+        while(curr.next!=null){
+            curr=curr.next;
+        }
+        curr.next = join;
+
+        System.out.println(m);
+        printLinkList(mptr);
+//        if(m==1)
+//            return mptr.next;
+//        else
+            return returnptr;
+    }
+
 }
+
