@@ -5,23 +5,31 @@ public  class TreeNode {
     public TreeNode left;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
+    public TreeNode(int x, TreeNode left, TreeNode right) {
+        val = x;
+        this.left = left;
+        this.right = right;
+    }
 
     /**
      *
-         5
-        / \
-       4   8
-      /   / \
-     11  13  4
-     / \      \
-    7  2      1
-
+     *        5
+     *      /  \
+     *     4   8
+     *    /   / \
+     *   11  13  4
+     *   / \      \
+     *  7  2      1
+     *      \
+     *      22
+     *
      * @return TreeNode
      */
     public static TreeNode getSampleTree(){
         TreeNode node7 = new TreeNode(7);
         TreeNode node2 = new TreeNode(2);
         TreeNode node1 = new TreeNode(1);
+        node2.right = new TreeNode(22);
 
         TreeNode node11 = new TreeNode(11);
         node11.left=node7;
@@ -43,9 +51,43 @@ public  class TreeNode {
         return root5;
     }
 
+    /**
+     *            10
+     *          /    \
+     *         5     20
+     *        / \    / \
+     *       3  8   15 31
+     *      /\  /\     / \
+     *     2 4 7 9    25 35
+     * @return
+     */
+    public static TreeNode getSampleBinarySearchTree(){
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node3 = new TreeNode(3, node2, node4);
+
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node9 = new TreeNode(9);
+        TreeNode node8 = new TreeNode(8, node7, node9);
+
+        TreeNode node5 = new TreeNode(5, node3, node8);
+
+        TreeNode node15 = new TreeNode(15);
+        TreeNode node25 = new TreeNode(25);
+        TreeNode node35 = new TreeNode(35);
+
+        TreeNode node31 = new TreeNode(31, node25, node35);
+
+        TreeNode node20 = new TreeNode(20, node15, node31);
+
+        TreeNode root10 = new TreeNode(10, node5, node20);
+
+        return root10;
+    }
+
     public static void printTree(TreeNode root){
         if(root!=null) {
-            System.out.println(root.val);
+            System.out.print(root.val+",");
         }
         if(root.left!=null) {
             printTree(root.left);

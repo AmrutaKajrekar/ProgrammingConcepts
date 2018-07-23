@@ -44,6 +44,7 @@ public class LevelOrderTraversal {
 
     private void printTree(TreeNode root, int level, List<Integer> sub) {
         if(root==null) return;
+        System.out.println("root.val = "+ root.val + ", level = "+ level);
         if(level ==1) sub.add(root.val);
         else{
             printTree(root.left,level-1,sub);
