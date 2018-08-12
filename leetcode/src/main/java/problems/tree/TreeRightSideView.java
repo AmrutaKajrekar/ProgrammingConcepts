@@ -4,8 +4,8 @@ package problems.tree;
  * @author amruta.kajrekar on 7/1/18.
  */
 public class TreeRightSideView {
-    static int rightmax = 0;
-    static int leftmax = 0;
+    private int rightmax = 0;
+    private int leftmax = 0;
 
     public static void main(String[] args){
         TreeRightSideView right = new TreeRightSideView();

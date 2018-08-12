@@ -9,21 +9,14 @@ public class RotateArray {
 	public static void main(String[] args) {
 		int[] nums = {1,2,3,4,5,6,7,8,9,10};
 		RotateArray rotate = new RotateArray();
-		rotate.rotateArray(nums, 3);
-	}
-
-	public void rotateArray(int[] nums, int k){
-		for(int i=(nums.length-k);i<nums.length;i++){
-
-		}
-
+		rotate.rotate(nums, 23);
 	}
 
 
 	public void rotate(int[] nums, int k) {
 		int[] res = new int[nums.length];
 		if(nums.length<k){
-		k = k-nums.length;	
+		k = k%nums.length;
 		}
 		int j=0;
         for (int i = nums.length-k; i < nums.length; i++) {
