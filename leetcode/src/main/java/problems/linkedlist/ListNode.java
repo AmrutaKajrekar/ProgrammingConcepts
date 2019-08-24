@@ -11,7 +11,7 @@ public class ListNode {
      * This method will return a sample list as 1-2-3-4-5-6-7-NULL.
      * @return ListNode object that points to the head of the list
      */
-    public static ListNode getSampleLinkedList(){
+    public static ListNode getSampleSortedLinkedList(){
         ListNode node11 = new ListNode(11);
         ListNode node10 = new ListNode(10, node11);
         ListNode node9 = new ListNode(9, node10);
@@ -39,5 +39,14 @@ public class ListNode {
         ListNode node2 = new ListNode(2, node3);
         ListNode node1 = new ListNode(11, node2);
         return node1;
+    }
+
+    public static void printLinkedList(ListNode head){
+        System.out.println("");
+        while(head!=null){
+            System.out.print(head.val + "->");
+            head = head.next;
+        }
+        System.out.print("NULL");
     }
 }
