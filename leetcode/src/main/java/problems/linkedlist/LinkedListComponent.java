@@ -13,7 +13,7 @@ import java.util.Set;
 public class LinkedListComponent {
     public static void main(String[] args){
         LinkedListComponent comp = new LinkedListComponent();
-        System.out.print(comp.numComponents(ListNode.getSampleLinkedList(), new int[]{0,1,2}));
+        System.out.print(comp.numComponents(ListNode.getSampleSortedLinkedList(), new int[]{0,1,2}));
     }
 
     public int numComponents2(ListNode head, int[] G) {

@@ -7,7 +7,7 @@ public class OddEvenList {
 
     public static void main(String[] args){
         OddEvenList oddeven = new OddEvenList();
-        oddeven.oddEvenList(ListNode.getSampleLinkedList());
+        oddeven.oddEvenList(ListNode.getSampleSortedLinkedList());
     }
 
     public ListNode oddEvenList(ListNode head) {

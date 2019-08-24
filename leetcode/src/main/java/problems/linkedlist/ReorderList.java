@@ -9,7 +9,7 @@ public class ReorderList {
 
   public static void main(String[] args){
     ReorderList list = new ReorderList();
-    list.reorderList(ListNode.getSampleLinkedList());
+    list.reorderList(ListNode.getSampleSortedLinkedList());
   }
   public void reorderList(ListNode head) {
     Stack<ListNode> s = new Stack<ListNode>();

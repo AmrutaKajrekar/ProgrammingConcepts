@@ -6,7 +6,7 @@ package problems.linkedlist;
 public class OneThirdNode {
     public static void main(String[] args){
         OneThirdNode node = new OneThirdNode();
-        node.printOneThirdNodes(ListNode.getSampleLinkedList());
+        node.printOneThirdNodes(ListNode.getSampleSortedLinkedList());
     }
 
     public void printOneThirdNodes(ListNode head){

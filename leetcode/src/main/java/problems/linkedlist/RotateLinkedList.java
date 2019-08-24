@@ -8,7 +8,7 @@ public class RotateLinkedList {
     public static void main(String[] args){
         RotateLinkedList list = new RotateLinkedList();
 //        ListNode result = list.rotateRight(ListNode.getSampleLinkedList(), 3);
-        ListNode result = list.partition(ListNode.getSampleLinkedList(), 0);
+        ListNode result = list.partition(ListNode.getSampleSortedLinkedList(), 0);
 
         while(result!=null){
             System.out.print(result.val+",");

@@ -6,7 +6,7 @@ package problems.linkedlist;
 public class SwapLinkedList {
     public static void main(String[] args){
         SwapLinkedList list = new SwapLinkedList();
-        list.swapPairs(ListNode.getSampleLinkedList());
+        list.swapPairs(ListNode.getSampleSortedLinkedList());
     }
 
     public ListNode swapPairs(ListNode head) {
