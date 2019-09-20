@@ -41,6 +41,21 @@ public class ListNode {
         return node1;
     }
 
+    /**
+     * This method will return a sample list as for as many numbers mentioned in parameters.
+     * @return ListNode object that points to the head of the list
+     */
+    public static ListNode getSampleSortedLinkedList(int start, int end){
+        ListNode tmp = new ListNode(start);
+        if(start==end) {
+            tmp.next = null;
+            return tmp;
+        }else {
+            tmp.next = getSampleSortedLinkedList(start + 1, end);
+        }
+        return tmp;
+    }
+
     public static void printLinkedList(ListNode head){
         System.out.println("");
         while(head!=null){
